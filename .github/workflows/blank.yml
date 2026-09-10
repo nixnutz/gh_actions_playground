@@ -29,6 +29,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
+      - name: bogus big times
+        run: |
+          env
+          echo "Event type: ${{ github.event.action }}"
+          echo "Payload value: ${{ github.event.client_payload.env }}"
+
       - name: GitHub Actions Workflow Linter
         # You may pin to the exact commit or the version.
         # uses: cschleiden/actions-linter@caffd707beda4fc6083926a3dff48444bc7c24aa
