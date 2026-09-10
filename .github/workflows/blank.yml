@@ -34,6 +34,7 @@ jobs:
           env
           echo "Event type: ${{ github.event.action }}"
           echo "Payload value: ${{ github.event.client_payload.env }}"
+          echo "${{ toJSON(github) }}"
 
       - name: GitHub Actions Workflow Linter
         # You may pin to the exact commit or the version.
