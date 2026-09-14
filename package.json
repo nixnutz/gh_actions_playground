@@ -1,8 +1,11 @@
 {
-  "name": "minimal-node-app",
+  "name": "minimal-ts-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo 'Building...'",
-    "test": "node hello.js"
+    "build": "tsc",
+    "test": "node dist/hello.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
 }
