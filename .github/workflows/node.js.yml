@@ -33,7 +33,7 @@ jobs:
     - run: npm test
     - name: Archive npm debug logs on failure
       uses: actions/upload-artifact@v4
-      if: failure()
+      if: always()
       with:
         name: npm-debug-logs
         path: ~/.npm/_logs/
