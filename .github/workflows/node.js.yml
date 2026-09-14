@@ -37,3 +37,10 @@ jobs:
       with:
         name: npm-debug-logs
         path: ~/.npm/_logs/
+    - name: Display npm log in Job Summary
+      if: always()
+      run: |
+        echo "### ❌ npm Debug Log" >> $GITHUB_STEP_SUMMARY
+        echo '```text' >> $GITHUB_STEP_SUMMARY
+        cat ~/.npm/_logs/*.log >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
