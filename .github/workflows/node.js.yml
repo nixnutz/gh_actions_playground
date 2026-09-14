@@ -31,3 +31,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - name: Archive npm debug logs on failure
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: npm-debug-logs
+        path: ~/.npm/_logs/
