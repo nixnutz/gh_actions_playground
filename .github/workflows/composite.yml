@@ -10,9 +10,10 @@ jobs:
         run: echo Hello, world!
         
       - name: Use my composite action
+        id: my-action
         uses: ./.github/actions/my-composite
         with:
           node-version: '18'
 
       - name: Display result
-        run: echo Script Result: ${{ steps.my-action.outputs.script-result }}
+        run: echo "Script Result: ${{ steps.my-action.outputs.script-result }}"
